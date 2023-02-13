@@ -1,0 +1,50 @@
+<h4>Propiedades input en Angular</h4>
+
+<componente-hijo 
+	[texto1]="dato_externo"
+	[texto2]="identity"
+	(desde_el_hijo)="recibirDatos($event)"
+	>			
+</componente-hijo>
+
+<div *ngIf="datos_del_hijo">
+	<h1>{{datos_del_hijo.nombre}}</h1>
+	<h1>{{datos_del_hijo.web}}</h1>
+	<h1>{{datos_del_hijo.twitter}}</h1>
+</div>
+
+
+
+
+
+<hr/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>
+	{{titulo}}
+</h4>
+
+<div *ngIf="administrador; then Admin else noAdmin"></div>
+
+<ng-template #Admin>
+	<button (click)="cambiar(false)"></button>
+	<strong style="background: yellow; ">Eres el administrador de la webapp</strong>
+</ng-template>
+
+<ng-template #noAdmin>
+	<button (click)="cambiar(true)"></button>
+	<strong style="background: red; color: white;">No eres el administrador de la webapp</strong>
+</ng-template>
+
